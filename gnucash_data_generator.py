@@ -1,4 +1,5 @@
 import random
+import uuid
 import warnings
 from datetime import datetime, timedelta
 from decimal import Decimal, ROUND_HALF_UP
@@ -23,16 +24,37 @@ warnings.filterwarnings("ignore", category=SAWarning)
 def quantize(val):
     return Decimal(str(val)).quantize(Decimal('0.01'), rounding=ROUND_HALF_UP)
 
+uuidGenCounter = 0
+def generate_next_uuid():
+    global uuidGenCounter
+    counter_hex = f"{uuidGenCounter:012x}"
+    uuid_string = f"{"10000000000000000000"}{counter_hex}"
+    uuidGenCounter += 1
+    return uuid.UUID(uuid_string).hex
+
+
+def guidChange(book, account):    
+    account.guid = generate_next_uuid()
+    # book.save()
+    
+    
 def setup_book(filename="gnucash_sample_db.gnucash"):
     print("--- Initializing structural GnuCash bookkeeping schema...")
-    book = create_book(sqlite_file=filename, currency=default_currency)
+    book = create_book(sqlite_file=filename, currency=default_currency, overwrite=True)
+    book.guid = generate_next_uuid()
+    # book.root_account.guid = generate_next_uuid()
+    # guidChange(book, book.root_account)
+   # guidChange(book, book.root_template)
+    
+        
+    
     default_commodity = book.commodities.get(mnemonic=default_currency)
     root = book.root_account
-
+        
     # Liquid Assets
     assets = Account(name="Assets", type="ASSET", parent=root, commodity=default_commodity)
-    bank = Account(name="Checking Account", type="ASSET", parent=assets, commodity=default_commodity)
-    cash = Account(name="Cash", type="ASSET", parent=assets, commodity=default_commodity)
+    bank = Account(name="Checking Account", type="BANK", parent=assets, commodity=default_commodity)
+    cash = Account(name="Cash", type="CASH", parent=assets, commodity=default_commodity)
 
     # Sub-Portfolios
     stock_p = Account(name="Stock Portfolio", type="ASSET", parent=assets, commodity=default_commodity)
@@ -42,6 +64,7 @@ def setup_book(filename="gnucash_sample_db.gnucash"):
     # Liabilities & Revenue
     liabilities = Account(name="Liabilities", type="LIABILITY", parent=root, commodity=default_commodity)
     credit_card = Account(name="Credit Card", type="LIABILITY", parent=liabilities, commodity=default_commodity)
+    mortgage = Account(name="Family Credit", type="LIABILITY", parent=liabilities, commodity=default_commodity)
 
     income = Account(name="Income", type="INCOME", parent=root, commodity=default_commodity)
     salary = Account(name="Salary Income", type="INCOME", parent=income, commodity=default_commodity)
@@ -68,9 +91,18 @@ def setup_book(filename="gnucash_sample_db.gnucash"):
     trading_fees = Account(name="Trading Fees", type="EXPENSE", parent=expenses, commodity=default_commodity)
     brokerage_fees = Account(name="Stock Commission Fees", type="EXPENSE", parent=trading_fees, commodity=default_commodity)
     crypto_gas_fees = Account(name="Crypto Exchange & Gas Fees", type="EXPENSE", parent=trading_fees, commodity=default_commodity)
-
+    
+    
+    unsaved_accounts = [obj for obj in book.session.new if isinstance(obj, Account)]
+    for account in unsaved_accounts:
+        if not account.parent: # Skip root
+            continue
+        
+        account.guid = generate_next_uuid()
+        
+ 
     return (book, default_commodity, bank, cash, stock_p, metal_p, crypto_p, credit_card,
-            salary, cap_gains, groceries, leisure, rent_mortgage,
+            salary, cap_gains, groceries, leisure, rent_mortgage, mortgage,
             utilities, phone_internet, fuel_transit, auto_insurance, income_tax,
             property_tax, brokerage_fees, crypto_gas_fees)
 
@@ -103,6 +135,7 @@ def build_market_registry(book, stock_p, metal_p, crypto_p):
         comm = Commodity(namespace="NASDAQ", mnemonic=ticker, fullname=name, fraction=10000)
         book.add(comm)
         acc = Account(name=f"{ticker} ({name})", type="STOCK", parent=stock_p, commodity=comm)
+        guidChange(book, acc)
         asset_registry[ticker] = {"account": acc, "shares": Decimal("0.0000"), "avg_cost": Decimal("0.0000")}
         current_prices[ticker] = Decimal(str(start_price))
 
@@ -113,6 +146,7 @@ def build_market_registry(book, stock_p, metal_p, crypto_p):
         comm = Commodity(namespace="METALS", mnemonic=symbol, fullname=name, fraction=10000)
         book.add(comm)
         acc = Account(name=name, type="ASSET", parent=metal_p, commodity=comm)
+        guidChange(book, acc)
         asset_registry[symbol] = {"account": acc, "shares": Decimal("0.0000"), "avg_cost": Decimal("0.0000")}
         current_prices[symbol] = Decimal(str(start_price))
 
@@ -124,6 +158,7 @@ def build_market_registry(book, stock_p, metal_p, crypto_p):
         comm = Commodity(namespace="CRYPTO", mnemonic=symbol, fullname=name, fraction=1000000)
         book.add(comm)
         acc = Account(name=f"{name} ({symbol})", type="ASSET", parent=crypto_p, commodity=comm)
+        guidChange(book, acc)
         asset_registry[symbol] = {"account": acc, "shares": Decimal("0.000000"), "avg_cost": Decimal("0.0000")}
         current_prices[symbol] = Decimal(str(start_price))
 
@@ -134,7 +169,7 @@ def build_market_registry(book, stock_p, metal_p, crypto_p):
 def run_simulation():
     # Fetch structures from prior scripts
     (book, dft_currency, bank, cash, stock_p, metal_p, crypto_p, credit_card,
-     salary, cap_gains, groceries, leisure, rent_mortgage,
+     salary, cap_gains, groceries, leisure, rent_mortgage, mortgage,
      utilities, phone_internet, fuel_transit, auto_insurance, income_tax,
      property_tax, brokerage_fees, crypto_gas_fees) = setup_book()
 
@@ -145,46 +180,60 @@ def run_simulation():
     fake = Faker('en_US')
     start_date, end_date = datetime(start_year, 1, 1), datetime(datetime.today().date().year, 12, 31, 23, 59, 59)
     daily_expense_pool = [
-        (groceries, "Supermarket Run", 2.00, 23.00),
-        (leisure, "Coffee & Restaurants", 2.00, 15.00),
-        (fuel_transit, "Gas Station / Commute", 2.00, 15.00)
+        (groceries, "Supermarket Run", 5.00, 21.00),
+        (leisure, "Coffee & Restaurants", 5.00, 15.00),
+        (fuel_transit, "Gas Station / Commute", 5.00, 21.00)
     ]
 
     current_date = start_date
     total_tx_count = 0
-    tax_last_update, fixed_last_update, county_last_update, groceries_last_update = datetime(start_year-1, 1, 1), datetime(start_year-1, 1, 1), datetime(start_year-1, 1, 1), datetime(start_year-1, 1, 1);
+    tax_last_update, fixed_last_update, county_last_update, groceries_last_update = datetime(start_year-1, 1, 1), \
+                datetime(start_year-1, 1, 1), datetime(start_year-1, 1, 1), datetime(start_year-1, 1, 1);
 
     print(f"--- Generating entries (salaries, taxes, stocks, credits, etc.). Time window:  [ {start_date.date()}  -  {end_date.date()} ]")
 
+
+    #eq = quantize(12664.31)
+    #tx = Transaction(currency=dft_currency, post_date=current_date.date(), description="Big Credit / Tax - initial liability")
+    #Split(account=mortgage, transaction=tx, value=-eq)
+    #Split(account=property_tax, transaction=tx, value=(eq))
+    
+    
     while current_date <= end_date:
         # Salaries (1st and 15th)
         if current_date.day in [1, 15] and current_date.date() > tax_last_update.date():
-            credit_card_toppup = Decimal(str(random.uniform(300, 600)));
+            credit_card_toppup = Decimal(str(random.uniform(75, 250)));
             if credit_card.get_balance() <= 300:
                 credit_card_toppup = 0
 
             cash_toppup = 0;
             if cash.get_balance() < 200:
-                cash_toppup = 250
+                cash_toppup = 200
+                
+            mortgage_toppup = Decimal(str(random.uniform(50, 200)));
+            if mortgage.get_balance() < 200:
+                mortgage_toppup = 0
 
             gross, tax = quantize(950.00), quantize(100.00)
             tx = Transaction(currency=dft_currency, post_date=current_date.date(), description="Corporate Payroll Settlement")
             Split(account=salary, transaction=tx, value=-gross)
-            Split(account=bank, transaction=tx, value=(gross - tax - cash_toppup - credit_card_toppup))
+            Split(account=bank, transaction=tx, value=(gross - tax - cash_toppup - credit_card_toppup)) #- mortgage_toppup))
             Split(account=income_tax, transaction=tx, value=tax)
             Split(account=cash, transaction=tx, value=cash_toppup)
             Split(account=credit_card, transaction=tx, value=credit_card_toppup)
+            #Split(account=mortgage, transaction=tx, value=mortgage_toppup)
+            
             total_tx_count += 1
             tax_last_update = current_date
 
         # Fixed Bills (1st of Month)
         if current_date.day == 1 and current_date.date() > fixed_last_update.date():
-            for acc, desc, amt in [(rent_mortgage, "Rent Payment", 400.00), (utilities, "Municipal Utilities", 50.50)]:
+            for acc, desc, amt in [(rent_mortgage, "Rent Payment", Decimal(str(random.uniform(350, 500)))), (utilities, "Municipal Utilities", 50.50)]:
                 tx = Transaction(currency=dft_currency, post_date=current_date.date(), description=desc)
                 Split(account=bank, transaction=tx, value=-quantize(amt))
                 Split(account=acc, transaction=tx, value=quantize(amt))
                 total_tx_count += 1
-            for acc, desc, amt in [(phone_internet, "Telecom Bundle", 25.00), (auto_insurance, "Car Premium", 45.00)]:
+            for acc, desc, amt in [(phone_internet, "Telecom Bundle", 35.00), (auto_insurance, "Car Premium", 55.00)]:
                 tx = Transaction(currency=dft_currency, post_date=current_date.date(), description=desc)
                 Split(account=credit_card, transaction=tx, value=-quantize(amt))
                 Split(account=acc, transaction=tx, value=quantize(amt))
@@ -204,7 +253,7 @@ def run_simulation():
             acc, prefix, low, high = random.choice(daily_expense_pool)
             amt = quantize(random.uniform(low, high))
             tx = Transaction(currency=dft_currency, post_date=current_date.date(), description=f"{prefix} - {fake.company()}")
-            Split(account=(credit_card if random.random() < 0.75 else random.choice([bank, cash]) if bank.get_balance() > 50 else cash), transaction=tx, value=-amt)
+            Split(account=(random.choice([bank, cash]) if (bank.get_balance() > 50 and cash.get_balance() > 50) else credit_card), transaction=tx, value=-amt)
             Split(account=acc, transaction=tx, value=amt)
             total_tx_count += 1
 
@@ -226,13 +275,16 @@ def run_simulation():
 
 
             if action == "BUY":
-                qty = Decimal(str(round(random.uniform(0.00005, 0.00015), 5))) if is_crypto else Decimal(str(round(random.uniform(0.005, 0.03), 3))) if chosen in ["XAU"] else Decimal(str(round(random.uniform(0.3, 1.0), 2)))
-                fee = quantize(qty * price * Decimal("0.015")) if is_crypto else quantize(6.95) if chosen in ["XAU", "XAG"] else quantize(3.95)
+                qty = Decimal(str(round(random.uniform(0.00005, 0.00015), 5))) if is_crypto \
+                        else Decimal(str(round(random.uniform(0.005, 0.03), 3))) if chosen in ["XAU"] \
+                            else Decimal(str(round(random.uniform(0.3, 1.0), 2)))
+                fee = quantize(qty * price * Decimal("0.015")) if is_crypto else quantize(0.95) if chosen in ["XAU", "XAG"] else quantize(0.66)
                 cost = quantize(qty * price)
 
                 curr_balance = bank.get_balance()
-                if bank.get_balance() - cost < 0:
+                if (curr_balance - (cost + fee)) < 300 or curr_balance < 300:
                     current_date += timedelta(minutes=800)
+                    print(" .", end='', flush=True)
                     continue
 
                 tx = Transaction(currency=dft_currency, post_date=current_date.date(), description=f"Asset Purchase: {chosen}")
@@ -241,10 +293,11 @@ def run_simulation():
                 Split(account=fee_acc, transaction=tx, value=fee)
                 asset["shares"] += qty
                 total_tx_count += 1
-                print(" .", end='', flush=True)
+                print(" +", end='', flush=True)
 
             elif action == "SELL":
-                qty = Decimal(str(round(random.uniform(0.0005, float(asset["shares"]*0.5)), 4))) if chosen in ["BTC"] else Decimal(str(round(random.uniform(0.10, float(asset["shares"])*0.5), 3)))
+                qty = Decimal(str(round(random.uniform(0.0005, float(asset["shares"]*0.5)), 4))) if chosen in ["BTC"] \
+                        else Decimal(str(round(random.uniform(0.10, float(asset["shares"])*0.5), 3)))
                 fee = quantize(qty * price * Decimal("0.015")) if is_crypto else quantize(6.95) if chosen in ["XAU", "XAG"] else quantize(2.95)
                 rev = quantize(qty * price)
                 basis = quantize(rev + (rev * quantize(random.uniform(-0.29, 0.02))))
@@ -255,7 +308,7 @@ def run_simulation():
                 Split(account=cap_gains, transaction=tx, value=-(rev - basis))
                 asset["shares"] -= qty
                 total_tx_count += 1
-                print(f" .", end='', flush=True)
+                print(" -", end='', flush=True)
 
         current_date += timedelta(minutes=600)
 
@@ -268,17 +321,13 @@ def run_simulation():
     book.add(rate_price1)
     book.add(rate_price2)
 
-    credit_balance = credit_card.get_balance()
-    eq = quantize(1264.31)
-    eq2 = quantize(credit_balance) - quantize(120.43)
-    tx = Transaction(currency=dft_currency, post_date=current_date.date(), description="Corporate Payroll Settlement - Final Bonus")
-    Split(account=salary, transaction=tx, value=-eq)
-    Split(account=bank, transaction=tx, value=(eq - eq2))
-    Split(account=credit_card, transaction=tx, value=eq2)
-    total_tx_count += 1
-
     print(f"\n\n--- Compilation finished! Database entries successfully generated: {total_tx_count}", end="\n")
     print("--- Saving database to the file...")
+    book.save()
+    
+    book.root_account.guid = generate_next_uuid()
+    for child in book.root_account.children:
+        child.parent = book.root_account
     book.save()
 
 

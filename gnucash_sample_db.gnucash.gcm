@@ -1,5 +1,5 @@
 [Top]
-BookGuid=da5c203d1dfd45d4bd25d8bcfae111ff
+BookGuid=10000000000000000000000000000000
 WindowCount=1
 
 [Account Hierarchy]
@@ -48,8 +48,7 @@ future_min_report_width=0
 total_visible=true
 total_report_visible=false
 total_report_width=0
-total-period_visible=false
-total-period_width=0
+total-period_visible=true
 account-color_visible=false
 account-color_width=0
 account-balance-limit_visible=false
@@ -80,10 +79,154 @@ transfer_width=252
 debit_width=96
 credit_width=96
 
+[Register 953b2943db0f48d4a2271f31fdb8b978]
+date_width=114
+num_width=56
+reconcile_width=24
+balance_width=96
+transfer_width=231
+debit_width=96
+credit_width=96
+
+[Register a8cad42beff44edc939187feac50f854]
+date_width=114
+num_width=56
+reconcile_width=24
+balance_width=96
+transfer_width=231
+debit_width=96
+credit_width=96
+
+[Register e179c70d73504296bc54f5585727de58]
+date_width=114
+num_width=56
+reconcile_width=24
+balance_width=96
+transfer_width=231
+debit_width=96
+credit_width=96
+
+[Register 8e1a2fae3f0b47babf240a8c93fdfb7e]
+date_width=114
+num_width=56
+reconcile_width=24
+balance_width=96
+transfer_width=231
+debit_width=96
+credit_width=96
+
+[Register b6fc85c00d914c5b8085d1cde8dd8a6f]
+date_width=114
+num_width=56
+reconcile_width=24
+balance_width=96
+transfer_width=231
+debit_width=96
+credit_width=96
+
+[Register ee50ac2a90624686be3f3da44aae98d9]
+date_width=114
+num_width=56
+reconcile_width=24
+balance_width=96
+transfer_width=231
+debit_width=96
+credit_width=96
+
+[Register 97163173e4a44764bcfdaf3dfb36bb47]
+date_width=114
+num_width=56
+reconcile_width=24
+balance_width=96
+transfer_width=231
+debit_width=96
+credit_width=96
+
+[Register 844471e9b1144d0c974e036a2877dd16]
+date_width=114
+num_width=56
+reconcile_width=24
+balance_width=96
+transfer_width=231
+debit_width=96
+credit_width=96
+
+[Register 17dfddb3a7f94b28a3f4c1ff133e9b67]
+date_width=114
+num_width=56
+reconcile_width=24
+balance_width=96
+transfer_width=231
+debit_width=96
+credit_width=96
+
+[Register 7e0e28c258dc434a9a90a1d74f317be6]
+date_width=114
+num_width=56
+reconcile_width=24
+balance_width=96
+transfer_width=231
+debit_width=96
+credit_width=96
+
+[Register 2dcb13a35ec54459bfe188cc1613753b]
+date_width=114
+num_width=56
+reconcile_width=24
+balance_width=96
+transfer_width=231
+debit_width=96
+credit_width=96
+
+[Register 477b20f195be466a93b63f7bef88569f]
+date_width=114
+num_width=56
+reconcile_width=24
+balance_width=96
+transfer_width=231
+debit_width=96
+credit_width=96
+
+[Register 56d65bf7f09d4719aa12cc690e606dec]
+date_width=114
+num_width=56
+reconcile_width=24
+balance_width=96
+transfer_width=231
+debit_width=96
+credit_width=96
+
+[Register 10000000000000000000000000000003]
+date_width=114
+num_width=56
+reconcile_width=24
+balance_width=96
+transfer_width=231
+debit_width=96
+credit_width=96
+
+[Register 10000000000000000000000000000002]
+date_width=114
+num_width=56
+reconcile_width=24
+balance_width=96
+transfer_width=231
+debit_width=96
+credit_width=96
+
+[Register 10000000000000000000000000000008]
+date_width=114
+num_width=56
+reconcile_width=24
+balance_width=96
+transfer_width=231
+debit_width=96
+credit_width=96
+
 [Window 1]
-PageCount=13
+PageCount=15
 FirstPage=1
-PageOrder=1;3;4;13;5;7;6;2;8;9;11;12;10;
+PageOrder=1;5;6;15;3;2;9;14;13;12;11;10;8;7;4;
 WindowPosition=43;0;
 WindowGeometry=1877;1052;
 WindowMaximized=true
@@ -98,7 +241,7 @@ AccountTypes=-1
 ShowHidden=false
 ShowZeroTotal=true
 ShowUnused=true
-SelectedAccount=Assets
+SelectedAccount=Expenses
 OpenAccount1=Assets
 OpenAccount2=Expenses
 OpenAccount3=Income
@@ -106,72 +249,90 @@ OpenAccount4=Liabilities
 NumberOfOpenAccounts=4
 
 [Page 2]
-PageType=GncPluginPageReport
-PageName=-- Dashboard 2.0
-SchemeOptions14=(let ((options (gnc:report-template-new-options/report-guid "f8748b813fab4220ba26e743aedf38da" "Cash Flow"))) (let ((option (gnc:lookup-option options                                  "Accounts"                                  "Account")))   ((lambda (o) (if o (gnc:option-set-value o '("29320558c8f146c98e5882d3e3ed5b39" "2f1dd08b722545318957ee99d3ccce19" "a83268efb9234b75b754e9dd0ea61ad0" "64fa1264e51e40e594b91d8ea13b09c4" "8a5bf38cb73d4bee95a1bb85bcfe6d3d" "96e2f5385ce54b73a31c60342446a936" "e859272d1c0444419278d51a5afd0a6b" "3be03d6dc76141c88f962cdac8bfb257" "6a94857b70894cfba0acc47febb73190" "5db6679bc7d64abba604ff16f38cb275" "e5ef33522a0840abb6cdb736744cbb50" "b6604581541d4849bf6b9ff4954c00fc" "4573d375dfe24e349c19a0da2f58f44a" "f43434e08a864897a077de021625065d" "675ac72977f944f1ae3b328cb0534a60" "bbad6ff1597a4537a3931415942cd4b4" "bcc5f62268dc4e088c4706f7cace041e" "7c8930b8c13d414f9656a3a9a9bea1e4" "eed6e3cb99034aef90d5f5e0f1125e94" "26912245aa5e4b1dbdd2583e56263a11" "013ece441d8e4b1495850fd9037bbbba" "7f65ef8af36b427498bd01ffc5c83a0c" "b06dbf15a9564188827287e4eea9327d" "2b49f189f30a4a9eb0d10aee7cc1fa95")))) option)) (let ((option (gnc:lookup-option options                                  "General"                                  "Stylesheet")))   ((lambda (o) (if o (gnc:option-set-value o 'Easy))) option)) (let ((option (gnc:lookup-option options                                  "General"                                  "Report's currency")))   ((lambda (o) (if o (gnc:option-set-value o "USD"))) option)) (let ((option (gnc:lookup-option options                                  "General"                                  "Show Full Account Names")))   ((lambda (o) (if o (gnc:option-set-value o #f))) option))   (gnc:restore-report-by-guid-with-custom-template 14 "f8748b813fab4220ba26e743aedf38da" "Cash Flow" "" options) )
-SchemeOptions18=(let ((options (gnc:report-template-new-options/report-guid "80769921e87943adade887b9835a7685" "Income/Expense Chart"))) (let ((option (gnc:lookup-option options                                  "Accounts"                                  "Accounts")))   ((lambda (o) (if o (gnc:option-set-value o '("3e9d0a1a2c9e4836a7bafbf29fba6542" "332eb9a7273e44cab735e56a8c37fb24" "b57e2dd09acd4b2ba9dd526834f228f9" "78362a56ea3d40ccb1bb01edfc699b55" "3ded6b6d175241b7be04182c6a137fc6" "42e486f10fb5431f8d014cce562787ac" "bbd07bc728b143d2b7cb5da38af96df1" "4bd90deb87324737abec062fd43f121f" "cd168fc30ee54511a25a488c5bf2183d" "24bb009bf59c4f038c652c853076e89c" "54cc040123f2445c90dd395cafd820b1" "893bd1f09f1d4a3e8759610fa31c47e3" "d8ba0a92a82a477090c1b848caa63cbb" "6b72d41037254d3d8cb98b2cb66e1e66" "cb3dde78704342d0b755a252f2e2737d" "ea094f88cbdd472f9acf596c3d8ba313" "c4fa4e7596a44b58806d5ca86f16a4df" "15d4ed951ee647ba82d2e9e43ddd6d2d" "cdc25ddea8c048f1964b4d8225d74cbf")))) option)) (let ((option (gnc:lookup-option options                                  "Display"                                  "Show table")))   ((lambda (o) (if o (gnc:option-set-value o #t))) option)) (let ((option (gnc:lookup-option options                                  "Display"                                  "Plot Width")))   ((lambda (o) (if o (gnc:option-set-value o '(pixels . 500)))) option)) (let ((option (gnc:lookup-option options                                  "Display"                                  "Plot Height")))   ((lambda (o) (if o (gnc:option-set-value o '(pixels . 360)))) option)) (let ((option (gnc:lookup-option options                                  "General"                                  "Report name")))   ((lambda (o) (if o (gnc:option-set-value o "Income / Expense"))) option)) (let ((option (gnc:lookup-option options                                  "General"                                  "Stylesheet")))   ((lambda (o) (if o (gnc:option-set-value o 'Easy))) option)) (let ((option (gnc:lookup-option options                                  "General"                                  "Report's currency")))   ((lambda (o) (if o (gnc:option-set-value o "USD"))) option)) (let ((option (gnc:lookup-option options                                  "General"                                  "Price Source")))   ((lambda (o) (if o (gnc:option-set-value o 'pricedb-nearest))) option))   (gnc:restore-report-by-guid-with-custom-template 18 "80769921e87943adade887b9835a7685" "Income/Expense Chart" "" options) )
-SchemeOptions19=(let ((options (gnc:report-template-new-options/report-guid "44f81bee049b4b3ea908f8dac9a9474e" "Income Over Time"))) (let ((option (gnc:lookup-option options                                  "Display"                                  "Show table")))   ((lambda (o) (if o (gnc:option-set-value o #t))) option)) (let ((option (gnc:lookup-option options                                  "Display"                                  "Plot Width")))   ((lambda (o) (if o (gnc:option-set-value o '(pixels . 500)))) option)) (let ((option (gnc:lookup-option options                                  "Display"                                  "Plot Height")))   ((lambda (o) (if o (gnc:option-set-value o '(pixels . 360)))) option)) (let ((option (gnc:lookup-option options                                  "General"                                  "Report name")))   ((lambda (o) (if o (gnc:option-set-value o "Income Only"))) option)) (let ((option (gnc:lookup-option options                                  "General"                                  "Stylesheet")))   ((lambda (o) (if o (gnc:option-set-value o 'Easy))) option)) (let ((option (gnc:lookup-option options                                  "General"                                  "Report's currency")))   ((lambda (o) (if o (gnc:option-set-value o "USD"))) option)) (let ((option (gnc:lookup-option options                                  "General"                                  "Price Source")))   ((lambda (o) (if o (gnc:option-set-value o 'pricedb-nearest))) option))   (gnc:restore-report-by-guid-with-custom-template 19 "44f81bee049b4b3ea908f8dac9a9474e" "Income Over Time" "" options) )
-SchemeOptions23=(let ((options (gnc:report-template-new-options/report-guid "5c7fd8a1fe9a4cd38884ff54214aa88a" "Assets"))) (let ((option (gnc:lookup-option options                                  "Accounts"                                  "Accounts")))   ((lambda (o) (if o (gnc:option-set-value o '("29320558c8f146c98e5882d3e3ed5b39" "2f1dd08b722545318957ee99d3ccce19" "a83268efb9234b75b754e9dd0ea61ad0" "64fa1264e51e40e594b91d8ea13b09c4" "8a5bf38cb73d4bee95a1bb85bcfe6d3d" "96e2f5385ce54b73a31c60342446a936" "e859272d1c0444419278d51a5afd0a6b" "3be03d6dc76141c88f962cdac8bfb257" "6a94857b70894cfba0acc47febb73190" "5db6679bc7d64abba604ff16f38cb275" "e5ef33522a0840abb6cdb736744cbb50" "b6604581541d4849bf6b9ff4954c00fc" "4573d375dfe24e349c19a0da2f58f44a" "f43434e08a864897a077de021625065d" "675ac72977f944f1ae3b328cb0534a60" "bbad6ff1597a4537a3931415942cd4b4" "bcc5f62268dc4e088c4706f7cace041e" "7c8930b8c13d414f9656a3a9a9bea1e4" "eed6e3cb99034aef90d5f5e0f1125e94" "26912245aa5e4b1dbdd2583e56263a11" "013ece441d8e4b1495850fd9037bbbba" "7f65ef8af36b427498bd01ffc5c83a0c" "b06dbf15a9564188827287e4eea9327d" "2b49f189f30a4a9eb0d10aee7cc1fa95")))) option)) (let ((option (gnc:lookup-option options                                  "Display"                                  "Maximum Slices")))   ((lambda (o) (if o (gnc:option-set-value o '10.0))) option)) (let ((option (gnc:lookup-option options                                  "Display"                                  "Plot Width")))   ((lambda (o) (if o (gnc:option-set-value o '(pixels . 600)))) option)) (let ((option (gnc:lookup-option options                                  "Display"                                  "Plot Height")))   ((lambda (o) (if o (gnc:option-set-value o '(pixels . 300)))) option)) (let ((option (gnc:lookup-option options                                  "General"                                  "Stylesheet")))   ((lambda (o) (if o (gnc:option-set-value o 'Easy))) option)) (let ((option (gnc:lookup-option options                                  "General"                                  "Report's currency")))   ((lambda (o) (if o (gnc:option-set-value o "USD"))) option))   (gnc:restore-report-by-guid-with-custom-template 23 "5c7fd8a1fe9a4cd38884ff54214aa88a" "Assets" "" options) )
-SchemeOptions22=(let ((options (gnc:report-template-new-options/report-guid "3298541c236b494998b236dfad6ad752" "Account Summary"))) (let ((option (gnc:lookup-option options                                  "Accounts"                                  "Accounts")))   ((lambda (o) (if o (gnc:option-set-value o '("88fb748102e642e68f01f465521a7a21" "c23cf3761b4144eba7449561a539d50f" "3e9d0a1a2c9e4836a7bafbf29fba6542" "332eb9a7273e44cab735e56a8c37fb24" "b57e2dd09acd4b2ba9dd526834f228f9" "78362a56ea3d40ccb1bb01edfc699b55" "3ded6b6d175241b7be04182c6a137fc6" "42e486f10fb5431f8d014cce562787ac" "bbd07bc728b143d2b7cb5da38af96df1" "4bd90deb87324737abec062fd43f121f" "cd168fc30ee54511a25a488c5bf2183d" "24bb009bf59c4f038c652c853076e89c" "54cc040123f2445c90dd395cafd820b1" "893bd1f09f1d4a3e8759610fa31c47e3" "d8ba0a92a82a477090c1b848caa63cbb" "6b72d41037254d3d8cb98b2cb66e1e66" "cb3dde78704342d0b755a252f2e2737d" "ea094f88cbdd472f9acf596c3d8ba313" "c4fa4e7596a44b58806d5ca86f16a4df" "15d4ed951ee647ba82d2e9e43ddd6d2d" "cdc25ddea8c048f1964b4d8225d74cbf" "29320558c8f146c98e5882d3e3ed5b39" "2f1dd08b722545318957ee99d3ccce19" "a83268efb9234b75b754e9dd0ea61ad0" "64fa1264e51e40e594b91d8ea13b09c4" "8a5bf38cb73d4bee95a1bb85bcfe6d3d" "96e2f5385ce54b73a31c60342446a936" "e859272d1c0444419278d51a5afd0a6b" "3be03d6dc76141c88f962cdac8bfb257" "6a94857b70894cfba0acc47febb73190" "5db6679bc7d64abba604ff16f38cb275" "e5ef33522a0840abb6cdb736744cbb50" "b6604581541d4849bf6b9ff4954c00fc" "4573d375dfe24e349c19a0da2f58f44a" "f43434e08a864897a077de021625065d" "675ac72977f944f1ae3b328cb0534a60" "bbad6ff1597a4537a3931415942cd4b4" "bcc5f62268dc4e088c4706f7cace041e" "7c8930b8c13d414f9656a3a9a9bea1e4" "eed6e3cb99034aef90d5f5e0f1125e94" "26912245aa5e4b1dbdd2583e56263a11" "013ece441d8e4b1495850fd9037bbbba" "7f65ef8af36b427498bd01ffc5c83a0c" "b06dbf15a9564188827287e4eea9327d" "2b49f189f30a4a9eb0d10aee7cc1fa95")))) option)) (let ((option (gnc:lookup-option options                                  "Accounts"                                  "Levels of Subaccounts")))   ((lambda (o) (if o (gnc:option-set-value o '2))) option)) (let ((option (gnc:lookup-option options                                  "Commodities"                                  "Report's currency")))   ((lambda (o) (if o (gnc:option-set-value o "USD"))) option)) (let ((option (gnc:lookup-option options                                  "Display"                                  "Include accounts with zero total balances")))   ((lambda (o) (if o (gnc:option-set-value o #f))) option)) (let ((option (gnc:lookup-option options                                  "Display"                                  "Omit zero balance figures")))   ((lambda (o) (if o (gnc:option-set-value o #t))) option)) (let ((option (gnc:lookup-option options                                  "Display"                                  "Parent account balances")))   ((lambda (o) (if o (gnc:option-set-value o 'recursive-bal))) option)) (let ((option (gnc:lookup-option options                                  "Display"                                  "Parent account subtotals")))   ((lambda (o) (if o (gnc:option-set-value o 't))) option)) (let ((option (gnc:lookup-option options                                  "Display"                                  "Show accounting-style rules")))   ((lambda (o) (if o (gnc:option-set-value o #t))) option)) (let ((option (gnc:lookup-option options                                  "Display"                                  "Account Balance")))   ((lambda (o) (if o (gnc:option-set-value o #f))) option)) (let ((option (gnc:lookup-option options                                  "Display"                                  "Account Code")))   ((lambda (o) (if o (gnc:option-set-value o #f))) option)) (let ((option (gnc:lookup-option options                                  "General"                                  "Stylesheet")))   ((lambda (o) (if o (gnc:option-set-value o 'Easy))) option))   (gnc:restore-report-by-guid-with-custom-template 22 "3298541c236b494998b236dfad6ad752" "Account Summary" "" options) )
-SchemeOptions25=(let ((options (gnc:report-template-new-options/report-guid "5c7fd8a1fe9a4cd38884ff54214aa88a" "Assets"))) (let ((option (gnc:lookup-option options                                  "Accounts"                                  "Accounts")))   ((lambda (o) (if o (gnc:option-set-value o '("7f65ef8af36b427498bd01ffc5c83a0c" "b06dbf15a9564188827287e4eea9327d")))) option)) (let ((option (gnc:lookup-option options                                  "Accounts"                                  "Levels of Subaccounts")))   ((lambda (o) (if o (gnc:option-set-value o '3))) option)) (let ((option (gnc:lookup-option options                                  "Display"                                  "Maximum Slices")))   ((lambda (o) (if o (gnc:option-set-value o '10.0))) option)) (let ((option (gnc:lookup-option options                                  "Display"                                  "Plot Width")))   ((lambda (o) (if o (gnc:option-set-value o '(pixels . 600)))) option)) (let ((option (gnc:lookup-option options                                  "Display"                                  "Plot Height")))   ((lambda (o) (if o (gnc:option-set-value o '(pixels . 300)))) option)) (let ((option (gnc:lookup-option options                                  "General"                                  "Report name")))   ((lambda (o) (if o (gnc:option-set-value o "Surplus Money"))) option)) (let ((option (gnc:lookup-option options                                  "General"                                  "Stylesheet")))   ((lambda (o) (if o (gnc:option-set-value o 'Easy))) option)) (let ((option (gnc:lookup-option options                                  "General"                                  "Report's currency")))   ((lambda (o) (if o (gnc:option-set-value o "USD"))) option))   (gnc:restore-report-by-guid-with-custom-template 25 "5c7fd8a1fe9a4cd38884ff54214aa88a" "Assets" "" options) )
-SchemeOptions26=(let ((options (gnc:report-template-new-options/report-guid "2fe3b9833af044abb929a88d5a59620f" "Transaction Report"))) (let ((option (gnc:lookup-option options                                  "Accounts"                                  "Accounts")))   ((lambda (o) (if o (gnc:option-set-value o '("b06dbf15a9564188827287e4eea9327d" "7f65ef8af36b427498bd01ffc5c83a0c")))) option)) (let ((option (gnc:lookup-option options                                  "Display"                                  "Num")))   ((lambda (o) (if o (gnc:option-set-value o #f))) option)) (let ((option (gnc:lookup-option options                                  "Display"                                  "Subtotal Table")))   ((lambda (o) (if o (gnc:option-set-value o #t))) option)) (let ((option (gnc:lookup-option options                                  "Display"                                  "Account Balance")))   ((lambda (o) (if o (gnc:option-set-value o #t))) option)) (let ((option (gnc:lookup-option options                                  "General"                                  "Report name")))   ((lambda (o) (if o (gnc:option-set-value o "<hr style=\"border: 1px solid orange; margin-top: 100px;\"> Transaction Report"))) option)) (let ((option (gnc:lookup-option options                                  "General"                                  "Stylesheet")))   ((lambda (o) (if o (gnc:option-set-value o 'Easy))) option)) (let ((option (gnc:lookup-option options                                  "General"                                  "Table for Exporting")))   ((lambda (o) (if o (gnc:option-set-value o #t))) option))   (gnc:restore-report-by-guid-with-custom-template 26 "2fe3b9833af044abb929a88d5a59620f" "Transaction Report" "" options) )
-SchemeOptions=(let ((options (gnc:report-template-new-options/report-guid "d8ba4a2e89e8479ca9f6eccdeb164588" "Multicolumn View"))) (let ((option (gnc:lookup-option options                                  "General"                                  "Report name")))   ((lambda (o) (if o (gnc:option-set-value o "-- Dashboard 2.0"))) option)) (let ((option (gnc:lookup-option options                                  "General"                                  "Stylesheet")))   ((lambda (o) (if o (gnc:option-set-value o 'Easy))) option)) (let ((option (gnc:lookup-option options                                  "General"                                  "Number of columns")))   ((lambda (o) (if o (gnc:option-set-value o '3.0))) option)) (let ((option (gnc:lookup-option options                                  "__general"                                  "report-list")))   ((lambda (o) (if o (gnc:option-set-value o '((14 1 3 #f) (18 1 1 #f) (19 1 1 #f) (23 1 1 #f) (22 1 2 #f) (25 1 1 #f) (26 3 1 #f))))) option))   (gnc:restore-report-by-guid-with-custom-template 13 "d8ba4a2e89e8479ca9f6eccdeb164588" "Multicolumn View" "" options) )
-
-[Page 3]
 PageType=GncPluginPageRegister
 PageName=Cash
 RegisterType=Account
 AccountName=Assets:Cash
-AccountGuid=b06dbf15a9564188827287e4eea9327d
+AccountGuid=10000000000000000000000000000003
+RegisterStyle=Ledger
+DoubleLineMode=false
+
+[Page 3]
+PageType=GncPluginPageRegister
+PageName=Checking Account
+RegisterType=Account
+AccountName=Assets:Checking Account
+AccountGuid=10000000000000000000000000000002
 RegisterStyle=Ledger
 DoubleLineMode=false
 
 [Page 4]
+PageType=GncPluginPageRegister
+PageName=Credit Card
+RegisterType=Account
+AccountName=Liabilities:Credit Card
+AccountGuid=10000000000000000000000000000008
+RegisterStyle=Ledger
+DoubleLineMode=false
+
+[Page 5]
+PageType=GncPluginPageReport
+PageName=-- Dashboard 2.0 --
+SchemeOptions2=(let ((options (gnc:report-template-new-options/report-guid "f8748b813fab4220ba26e743aedf38da" "Cash Flow"))) (let ((option (gnc:lookup-option options                                  "General"                                  "Stylesheet")))   ((lambda (o) (if o (gnc:option-set-value o 'Easy))) option)) (let ((option (gnc:lookup-option options                                  "General"                                  "Show Selected Accounts")))   ((lambda (o) (if o (gnc:option-set-value o #f))) option))   (gnc:restore-report-by-guid-with-custom-template 2 "f8748b813fab4220ba26e743aedf38da" "Cash Flow" "" options) )
+SchemeOptions12=(let ((options (gnc:report-template-new-options/report-guid "80769921e87943adade887b9835a7685" "Income/Expense Chart"))) (let ((option (gnc:lookup-option options                                  "Display"                                  "Show table")))   ((lambda (o) (if o (gnc:option-set-value o #t))) option)) (let ((option (gnc:lookup-option options                                  "Display"                                  "Plot Width")))   ((lambda (o) (if o (gnc:option-set-value o '(pixels . 500)))) option)) (let ((option (gnc:lookup-option options                                  "Display"                                  "Plot Height")))   ((lambda (o) (if o (gnc:option-set-value o '(pixels . 360)))) option)) (let ((option (gnc:lookup-option options                                  "General"                                  "Report name")))   ((lambda (o) (if o (gnc:option-set-value o "Income / Expense"))) option)) (let ((option (gnc:lookup-option options                                  "General"                                  "Stylesheet")))   ((lambda (o) (if o (gnc:option-set-value o 'Easy))) option)) (let ((option (gnc:lookup-option options                                  "General"                                  "Price Source")))   ((lambda (o) (if o (gnc:option-set-value o 'pricedb-nearest))) option))   (gnc:restore-report-by-guid-with-custom-template 12 "80769921e87943adade887b9835a7685" "Income/Expense Chart" "" options) )
+SchemeOptions13=(let ((options (gnc:report-template-new-options/report-guid "44f81bee049b4b3ea908f8dac9a9474e" "Income Over Time"))) (let ((option (gnc:lookup-option options                                  "Display"                                  "Show table")))   ((lambda (o) (if o (gnc:option-set-value o #t))) option)) (let ((option (gnc:lookup-option options                                  "Display"                                  "Plot Width")))   ((lambda (o) (if o (gnc:option-set-value o '(pixels . 500)))) option)) (let ((option (gnc:lookup-option options                                  "Display"                                  "Plot Height")))   ((lambda (o) (if o (gnc:option-set-value o '(pixels . 360)))) option)) (let ((option (gnc:lookup-option options                                  "General"                                  "Report name")))   ((lambda (o) (if o (gnc:option-set-value o "Income Only"))) option)) (let ((option (gnc:lookup-option options                                  "General"                                  "Stylesheet")))   ((lambda (o) (if o (gnc:option-set-value o 'Easy))) option)) (let ((option (gnc:lookup-option options                                  "General"                                  "Price Source")))   ((lambda (o) (if o (gnc:option-set-value o 'pricedb-nearest))) option))   (gnc:restore-report-by-guid-with-custom-template 13 "44f81bee049b4b3ea908f8dac9a9474e" "Income Over Time" "" options) )
+SchemeOptions19=(let ((options (gnc:report-template-new-options/report-guid "5c7fd8a1fe9a4cd38884ff54214aa88a" "Assets"))) (let ((option (gnc:lookup-option options                                  "Display"                                  "Maximum Slices")))   ((lambda (o) (if o (gnc:option-set-value o '10.0))) option)) (let ((option (gnc:lookup-option options                                  "Display"                                  "Plot Width")))   ((lambda (o) (if o (gnc:option-set-value o '(pixels . 600)))) option)) (let ((option (gnc:lookup-option options                                  "Display"                                  "Plot Height")))   ((lambda (o) (if o (gnc:option-set-value o '(pixels . 300)))) option)) (let ((option (gnc:lookup-option options                                  "General"                                  "Stylesheet")))   ((lambda (o) (if o (gnc:option-set-value o 'Easy))) option))   (gnc:restore-report-by-guid-with-custom-template 19 "5c7fd8a1fe9a4cd38884ff54214aa88a" "Assets" "" options) )
+SchemeOptions18=(let ((options (gnc:report-template-new-options/report-guid "3298541c236b494998b236dfad6ad752" "Account Summary"))) (let ((option (gnc:lookup-option options                                  "Accounts"                                  "Levels of Subaccounts")))   ((lambda (o) (if o (gnc:option-set-value o '2))) option)) (let ((option (gnc:lookup-option options                                  "Display"                                  "Include accounts with zero total balances")))   ((lambda (o) (if o (gnc:option-set-value o #f))) option)) (let ((option (gnc:lookup-option options                                  "Display"                                  "Omit zero balance figures")))   ((lambda (o) (if o (gnc:option-set-value o #t))) option)) (let ((option (gnc:lookup-option options                                  "Display"                                  "Parent account balances")))   ((lambda (o) (if o (gnc:option-set-value o 'recursive-bal))) option)) (let ((option (gnc:lookup-option options                                  "Display"                                  "Parent account subtotals")))   ((lambda (o) (if o (gnc:option-set-value o 't))) option)) (let ((option (gnc:lookup-option options                                  "Display"                                  "Show accounting-style rules")))   ((lambda (o) (if o (gnc:option-set-value o #t))) option)) (let ((option (gnc:lookup-option options                                  "Display"                                  "Account Balance")))   ((lambda (o) (if o (gnc:option-set-value o #f))) option)) (let ((option (gnc:lookup-option options                                  "Display"                                  "Account Code")))   ((lambda (o) (if o (gnc:option-set-value o #f))) option)) (let ((option (gnc:lookup-option options                                  "General"                                  "Stylesheet")))   ((lambda (o) (if o (gnc:option-set-value o 'Easy))) option))   (gnc:restore-report-by-guid-with-custom-template 18 "3298541c236b494998b236dfad6ad752" "Account Summary" "" options) )
+SchemeOptions20=(let ((options (gnc:report-template-new-options/report-guid "5c7fd8a1fe9a4cd38884ff54214aa88a" "Assets"))) (let ((option (gnc:lookup-option options                                  "Accounts"                                  "Accounts")))   ((lambda (o) (if o (gnc:option-set-value o '("10000000000000000000000000000003" "10000000000000000000000000000002")))) option)) (let ((option (gnc:lookup-option options                                  "Accounts"                                  "Levels of Subaccounts")))   ((lambda (o) (if o (gnc:option-set-value o '3))) option)) (let ((option (gnc:lookup-option options                                  "Display"                                  "Maximum Slices")))   ((lambda (o) (if o (gnc:option-set-value o '10.0))) option)) (let ((option (gnc:lookup-option options                                  "Display"                                  "Plot Width")))   ((lambda (o) (if o (gnc:option-set-value o '(pixels . 600)))) option)) (let ((option (gnc:lookup-option options                                  "Display"                                  "Plot Height")))   ((lambda (o) (if o (gnc:option-set-value o '(pixels . 300)))) option)) (let ((option (gnc:lookup-option options                                  "General"                                  "Report name")))   ((lambda (o) (if o (gnc:option-set-value o "Surplus Money"))) option)) (let ((option (gnc:lookup-option options                                  "General"                                  "Stylesheet")))   ((lambda (o) (if o (gnc:option-set-value o 'Easy))) option))   (gnc:restore-report-by-guid-with-custom-template 20 "5c7fd8a1fe9a4cd38884ff54214aa88a" "Assets" "" options) )
+SchemeOptions21=(let ((options (gnc:report-template-new-options/report-guid "2fe3b9833af044abb929a88d5a59620f" "Transaction Report"))) (let ((option (gnc:lookup-option options                                  "Accounts"                                  "Accounts")))   ((lambda (o) (if o (gnc:option-set-value o '("10000000000000000000000000000003" "10000000000000000000000000000002")))) option)) (let ((option (gnc:lookup-option options                                  "Display"                                  "Num")))   ((lambda (o) (if o (gnc:option-set-value o #f))) option)) (let ((option (gnc:lookup-option options                                  "Display"                                  "Subtotal Table")))   ((lambda (o) (if o (gnc:option-set-value o #t))) option)) (let ((option (gnc:lookup-option options                                  "Display"                                  "Account Balance")))   ((lambda (o) (if o (gnc:option-set-value o #t))) option)) (let ((option (gnc:lookup-option options                                  "General"                                  "Report name")))   ((lambda (o) (if o (gnc:option-set-value o "<hr style=\"border: 1px solid orange; margin-top: 75px;\"> Transaction Report"))) option)) (let ((option (gnc:lookup-option options                                  "General"                                  "Stylesheet")))   ((lambda (o) (if o (gnc:option-set-value o 'Easy))) option)) (let ((option (gnc:lookup-option options                                  "General"                                  "Table for Exporting")))   ((lambda (o) (if o (gnc:option-set-value o #t))) option))   (gnc:restore-report-by-guid-with-custom-template 21 "2fe3b9833af044abb929a88d5a59620f" "Transaction Report" "" options) )
+SchemeOptions=(let ((options (gnc:report-template-new-options/report-guid "d8ba4a2e89e8479ca9f6eccdeb164588" "Multicolumn View"))) (let ((option (gnc:lookup-option options                                  "General"                                  "Report name")))   ((lambda (o) (if o (gnc:option-set-value o "-- Dashboard 2.0 --"))) option)) (let ((option (gnc:lookup-option options                                  "General"                                  "Stylesheet")))   ((lambda (o) (if o (gnc:option-set-value o 'Easy))) option)) (let ((option (gnc:lookup-option options                                  "General"                                  "Number of columns")))   ((lambda (o) (if o (gnc:option-set-value o '3.0))) option)) (let ((option (gnc:lookup-option options                                  "__general"                                  "report-list")))   ((lambda (o) (if o (gnc:option-set-value o '((2 1 3 #f) (12 1 1 #f) (13 1 1 #f) (19 1 1 #f) (18 1 2 #f) (20 1 1 #f) (21 3 1 #f))))) option))   (gnc:restore-report-by-guid-with-custom-template 1 "d8ba4a2e89e8479ca9f6eccdeb164588" "Multicolumn View" "" options) )
+
+[Page 6]
 PageType=GncPluginPageReport
 PageName=Assets Over Time
 SchemeOptions=(let ((options (gnc:report-template-new-options/report-guid "e9cf815f79db44bcb637d0295093ae3d" "Assets Over Time"))) (let ((option (gnc:lookup-option options                                  "Accounts"                                  "Levels of Subaccounts")))   ((lambda (o) (if o (gnc:option-set-value o '3))) option)) (let ((option (gnc:lookup-option options                                  "Display"                                  "Maximum Bars")))   ((lambda (o) (if o (gnc:option-set-value o '20.0))) option)) (let ((option (gnc:lookup-option options                                  "General"                                  "Report's currency")))   ((lambda (o) (if o (gnc:option-set-value o "USD"))) option)) (let ((option (gnc:lookup-option options                                  "General"                                  "Price Source")))   ((lambda (o) (if o (gnc:option-set-value o 'pricedb-nearest))) option))   (gnc:restore-report-by-guid-with-custom-template 0 "e9cf815f79db44bcb637d0295093ae3d" "Assets Over Time" "" options) )
 
-[Page 5]
+[Page 7]
 PageType=GncPluginPageReport
 PageName=Assets
 SchemeOptions=(let ((options (gnc:report-template-new-options/report-guid "5c7fd8a1fe9a4cd38884ff54214aa88a" "Assets"))) (let ((option (gnc:lookup-option options                                  "Accounts"                                  "Levels of Subaccounts")))   ((lambda (o) (if o (gnc:option-set-value o '3))) option)) (let ((option (gnc:lookup-option options                                  "Display"                                  "Maximum Slices")))   ((lambda (o) (if o (gnc:option-set-value o '20.0))) option)) (let ((option (gnc:lookup-option options                                  "General"                                  "Report's currency")))   ((lambda (o) (if o (gnc:option-set-value o "USD"))) option))   (gnc:restore-report-by-guid-with-custom-template 3 "5c7fd8a1fe9a4cd38884ff54214aa88a" "Assets" "" options) )
 
-[Page 6]
+[Page 8]
 PageType=GncPluginPageReport
 PageName=Income/Expense Chart
-SchemeOptions=(let ((options (gnc:report-template-new-options/report-guid "80769921e87943adade887b9835a7685" "Income/Expense Chart"))) (let ((option (gnc:lookup-option options                                  "Accounts"                                  "Accounts")))   ((lambda (o) (if o (gnc:option-set-value o '("3e9d0a1a2c9e4836a7bafbf29fba6542" "332eb9a7273e44cab735e56a8c37fb24" "b57e2dd09acd4b2ba9dd526834f228f9" "78362a56ea3d40ccb1bb01edfc699b55" "3ded6b6d175241b7be04182c6a137fc6" "42e486f10fb5431f8d014cce562787ac" "bbd07bc728b143d2b7cb5da38af96df1" "4bd90deb87324737abec062fd43f121f" "cd168fc30ee54511a25a488c5bf2183d" "24bb009bf59c4f038c652c853076e89c" "54cc040123f2445c90dd395cafd820b1" "893bd1f09f1d4a3e8759610fa31c47e3" "d8ba0a92a82a477090c1b848caa63cbb" "6b72d41037254d3d8cb98b2cb66e1e66" "cb3dde78704342d0b755a252f2e2737d" "ea094f88cbdd472f9acf596c3d8ba313" "c4fa4e7596a44b58806d5ca86f16a4df" "15d4ed951ee647ba82d2e9e43ddd6d2d" "cdc25ddea8c048f1964b4d8225d74cbf")))) option)) (let ((option (gnc:lookup-option options                                  "General"                                  "Report's currency")))   ((lambda (o) (if o (gnc:option-set-value o "USD"))) option)) (let ((option (gnc:lookup-option options                                  "General"                                  "Price Source")))   ((lambda (o) (if o (gnc:option-set-value o 'pricedb-nearest))) option))   (gnc:restore-report-by-guid-with-custom-template 5 "80769921e87943adade887b9835a7685" "Income/Expense Chart" "" options) )
+SchemeOptions=(let ((options (gnc:report-template-new-options/report-guid "80769921e87943adade887b9835a7685" "Income/Expense Chart"))) (let ((option (gnc:lookup-option options                                  "Accounts"                                  "Accounts")))   ((lambda (o) (if o (gnc:option-set-value o '("1000000000000000000000000000000b" "1000000000000000000000000000000c" "1000000000000000000000000000000a" "10000000000000000000000000000015" "10000000000000000000000000000016" "10000000000000000000000000000014" "1000000000000000000000000000001b" "1000000000000000000000000000001c" "1000000000000000000000000000001a" "10000000000000000000000000000018" "10000000000000000000000000000019" "10000000000000000000000000000017" "10000000000000000000000000000012" "10000000000000000000000000000011" "10000000000000000000000000000013" "10000000000000000000000000000010" "1000000000000000000000000000000e" "1000000000000000000000000000000f" "1000000000000000000000000000000d")))) option)) (let ((option (gnc:lookup-option options                                  "General"                                  "Report's currency")))   ((lambda (o) (if o (gnc:option-set-value o "USD"))) option)) (let ((option (gnc:lookup-option options                                  "General"                                  "Price Source")))   ((lambda (o) (if o (gnc:option-set-value o 'pricedb-nearest))) option))   (gnc:restore-report-by-guid-with-custom-template 5 "80769921e87943adade887b9835a7685" "Income/Expense Chart" "" options) )
 
-[Page 7]
+[Page 9]
 PageType=GncPluginPageReport
 PageName=Expense Over Time
 SchemeOptions=(let ((options (gnc:report-template-new-options/report-guid "b1f15b2052c149df93e698fe85a81ea6" "Expense Over Time"))) (let ((option (gnc:lookup-option options                                  "Accounts"                                  "Levels of Subaccounts")))   ((lambda (o) (if o (gnc:option-set-value o '3))) option)) (let ((option (gnc:lookup-option options                                  "Display"                                  "Maximum Bars")))   ((lambda (o) (if o (gnc:option-set-value o '20.0))) option)) (let ((option (gnc:lookup-option options                                  "General"                                  "Report's currency")))   ((lambda (o) (if o (gnc:option-set-value o "USD"))) option)) (let ((option (gnc:lookup-option options                                  "General"                                  "Price Source")))   ((lambda (o) (if o (gnc:option-set-value o 'pricedb-nearest))) option))   (gnc:restore-report-by-guid-with-custom-template 24 "b1f15b2052c149df93e698fe85a81ea6" "Expense Over Time" "" options) )
 
-[Page 8]
+[Page 10]
 PageType=GncPluginPageReport
 PageName=Net Worth Linechart
 SchemeOptions=(let ((options (gnc:report-template-new-options/report-guid "d8b63264186b11e19038001558291366" "Net Worth Linechart"))) (let ((option (gnc:lookup-option options                                  "General"                                  "Report's currency")))   ((lambda (o) (if o (gnc:option-set-value o "USD"))) option)) (let ((option (gnc:lookup-option options                                  "General"                                  "Price Source")))   ((lambda (o) (if o (gnc:option-set-value o 'pricedb-nearest))) option))   (gnc:restore-report-by-guid-with-custom-template 9 "d8b63264186b11e19038001558291366" "Net Worth Linechart" "" options) )
 
-[Page 9]
-PageType=GncPluginPageReport
-PageName=Transaction Report
-SchemeOptions=(let ((options (gnc:report-template-new-options/report-guid "2fe3b9833af044abb929a88d5a59620f" "Transaction Report"))) (let ((option (gnc:lookup-option options                                  "Accounts"                                  "Accounts")))   ((lambda (o) (if o (gnc:option-set-value o '("7f65ef8af36b427498bd01ffc5c83a0c" "b06dbf15a9564188827287e4eea9327d")))) option)) (let ((option (gnc:lookup-option options                                  "Currency"                                  "Common Currency")))   ((lambda (o) (if o (gnc:option-set-value o #t))) option)) (let ((option (gnc:lookup-option options                                  "Currency"                                  "Report's currency")))   ((lambda (o) (if o (gnc:option-set-value o "USD"))) option)) (let ((option (gnc:lookup-option options                                  "Display"                                  "Use Full Account Name")))   ((lambda (o) (if o (gnc:option-set-value o #f))) option)) (let ((option (gnc:lookup-option options                                  "Display"                                  "Subtotal Table")))   ((lambda (o) (if o (gnc:option-set-value o #t))) option)) (let ((option (gnc:lookup-option options                                  "Display"                                  "Account Balance")))   ((lambda (o) (if o (gnc:option-set-value o #t))) option)) (let ((option (gnc:lookup-option options                                  "General"                                  "Stylesheet")))   ((lambda (o) (if o (gnc:option-set-value o 'Easy))) option)) (let ((option (gnc:lookup-option options                                  "General"                                  "Table for Exporting")))   ((lambda (o) (if o (gnc:option-set-value o #t))) option))   (gnc:restore-report-by-guid-with-custom-template 2 "2fe3b9833af044abb929a88d5a59620f" "Transaction Report" "" options) )
-
-[Page 10]
+[Page 11]
 PageType=GncPluginPageReport
 PageName=Cash Flow
 SchemeOptions=(let ((options (gnc:report-template-new-options/report-guid "f8748b813fab4220ba26e743aedf38da" "Cash Flow"))) (let ((option (gnc:lookup-option options                                  "General"                                  "Stylesheet")))   ((lambda (o) (if o (gnc:option-set-value o 'Easy))) option)) (let ((option (gnc:lookup-option options                                  "General"                                  "Report's currency")))   ((lambda (o) (if o (gnc:option-set-value o "USD"))) option))   (gnc:restore-report-by-guid-with-custom-template 4 "f8748b813fab4220ba26e743aedf38da" "Cash Flow" "" options) )
 
-[Page 11]
-PageType=GncPluginPageReport
-PageName=Profit & Loss
-SchemeOptions=(let ((options (gnc:report-template-new-options/report-guid "8758ba23984c40dea5527f5f0ca2779e" "Profit & Loss"))) (let ((option (gnc:lookup-option options                                  "Accounts"                                  "Accounts")))   ((lambda (o) (if o (gnc:option-set-value o '("3e9d0a1a2c9e4836a7bafbf29fba6542" "332eb9a7273e44cab735e56a8c37fb24" "b57e2dd09acd4b2ba9dd526834f228f9" "78362a56ea3d40ccb1bb01edfc699b55" "3ded6b6d175241b7be04182c6a137fc6" "42e486f10fb5431f8d014cce562787ac" "bbd07bc728b143d2b7cb5da38af96df1" "4bd90deb87324737abec062fd43f121f" "cd168fc30ee54511a25a488c5bf2183d" "24bb009bf59c4f038c652c853076e89c" "54cc040123f2445c90dd395cafd820b1" "893bd1f09f1d4a3e8759610fa31c47e3" "d8ba0a92a82a477090c1b848caa63cbb" "6b72d41037254d3d8cb98b2cb66e1e66" "cb3dde78704342d0b755a252f2e2737d" "ea094f88cbdd472f9acf596c3d8ba313" "c4fa4e7596a44b58806d5ca86f16a4df" "15d4ed951ee647ba82d2e9e43ddd6d2d" "cdc25ddea8c048f1964b4d8225d74cbf")))) option)) (let ((option (gnc:lookup-option options                                  "Commodities"                                  "Report's currency")))   ((lambda (o) (if o (gnc:option-set-value o "USD"))) option)) (let ((option (gnc:lookup-option options                                  "Display"                                  "Parent account balances")))   ((lambda (o) (if o (gnc:option-set-value o 'recursive-bal))) option)) (let ((option (gnc:lookup-option options                                  "Display"                                  "Parent account subtotals")))   ((lambda (o) (if o (gnc:option-set-value o 't))) option)) (let ((option (gnc:lookup-option options                                  "General"                                  "Stylesheet")))   ((lambda (o) (if o (gnc:option-set-value o 'Easy))) option))   (gnc:restore-report-by-guid-with-custom-template 6 "8758ba23984c40dea5527f5f0ca2779e" "Profit & Loss" "" options) )
-
 [Page 12]
 PageType=GncPluginPageReport
-PageName=Account Summary
-SchemeOptions=(let ((options (gnc:report-template-new-options/report-guid "3298541c236b494998b236dfad6ad752" "Account Summary"))) (let ((option (gnc:lookup-option options                                  "Accounts"                                  "Accounts")))   ((lambda (o) (if o (gnc:option-set-value o '("88fb748102e642e68f01f465521a7a21" "c23cf3761b4144eba7449561a539d50f" "3e9d0a1a2c9e4836a7bafbf29fba6542" "332eb9a7273e44cab735e56a8c37fb24" "b57e2dd09acd4b2ba9dd526834f228f9" "78362a56ea3d40ccb1bb01edfc699b55" "3ded6b6d175241b7be04182c6a137fc6" "42e486f10fb5431f8d014cce562787ac" "bbd07bc728b143d2b7cb5da38af96df1" "4bd90deb87324737abec062fd43f121f" "cd168fc30ee54511a25a488c5bf2183d" "24bb009bf59c4f038c652c853076e89c" "54cc040123f2445c90dd395cafd820b1" "893bd1f09f1d4a3e8759610fa31c47e3" "d8ba0a92a82a477090c1b848caa63cbb" "6b72d41037254d3d8cb98b2cb66e1e66" "cb3dde78704342d0b755a252f2e2737d" "ea094f88cbdd472f9acf596c3d8ba313" "c4fa4e7596a44b58806d5ca86f16a4df" "15d4ed951ee647ba82d2e9e43ddd6d2d" "cdc25ddea8c048f1964b4d8225d74cbf" "29320558c8f146c98e5882d3e3ed5b39" "2f1dd08b722545318957ee99d3ccce19" "a83268efb9234b75b754e9dd0ea61ad0" "64fa1264e51e40e594b91d8ea13b09c4" "8a5bf38cb73d4bee95a1bb85bcfe6d3d" "96e2f5385ce54b73a31c60342446a936" "e859272d1c0444419278d51a5afd0a6b" "3be03d6dc76141c88f962cdac8bfb257" "6a94857b70894cfba0acc47febb73190" "5db6679bc7d64abba604ff16f38cb275" "e5ef33522a0840abb6cdb736744cbb50" "b6604581541d4849bf6b9ff4954c00fc" "4573d375dfe24e349c19a0da2f58f44a" "f43434e08a864897a077de021625065d" "675ac72977f944f1ae3b328cb0534a60" "bbad6ff1597a4537a3931415942cd4b4" "bcc5f62268dc4e088c4706f7cace041e" "7c8930b8c13d414f9656a3a9a9bea1e4" "eed6e3cb99034aef90d5f5e0f1125e94" "26912245aa5e4b1dbdd2583e56263a11" "013ece441d8e4b1495850fd9037bbbba" "7f65ef8af36b427498bd01ffc5c83a0c" "b06dbf15a9564188827287e4eea9327d" "2b49f189f30a4a9eb0d10aee7cc1fa95")))) option)) (let ((option (gnc:lookup-option options                                  "Commodities"                                  "Report's currency")))   ((lambda (o) (if o (gnc:option-set-value o "USD"))) option)) (let ((option (gnc:lookup-option options                                  "Display"                                  "Parent account balances")))   ((lambda (o) (if o (gnc:option-set-value o 'recursive-bal))) option)) (let ((option (gnc:lookup-option options                                  "Display"                                  "Parent account subtotals")))   ((lambda (o) (if o (gnc:option-set-value o 't))) option)) (let ((option (gnc:lookup-option options                                  "Display"                                  "Show accounting-style rules")))   ((lambda (o) (if o (gnc:option-set-value o #t))) option)) (let ((option (gnc:lookup-option options                                  "Display"                                  "Account Code")))   ((lambda (o) (if o (gnc:option-set-value o #f))) option)) (let ((option (gnc:lookup-option options                                  "General"                                  "Stylesheet")))   ((lambda (o) (if o (gnc:option-set-value o 'Easy))) option))   (gnc:restore-report-by-guid-with-custom-template 7 "3298541c236b494998b236dfad6ad752" "Account Summary" "" options) )
+PageName=Profit & Loss
+SchemeOptions=(let ((options (gnc:report-template-new-options/report-guid "8758ba23984c40dea5527f5f0ca2779e" "Profit & Loss"))) (let ((option (gnc:lookup-option options                                  "Accounts"                                  "Accounts")))   ((lambda (o) (if o (gnc:option-set-value o '("1000000000000000000000000000000b" "1000000000000000000000000000000c" "1000000000000000000000000000000a" "10000000000000000000000000000015" "10000000000000000000000000000016" "10000000000000000000000000000014" "1000000000000000000000000000001b" "1000000000000000000000000000001c" "1000000000000000000000000000001a" "10000000000000000000000000000018" "10000000000000000000000000000019" "10000000000000000000000000000017" "10000000000000000000000000000012" "10000000000000000000000000000011" "10000000000000000000000000000013" "10000000000000000000000000000010" "1000000000000000000000000000000e" "1000000000000000000000000000000f" "1000000000000000000000000000000d")))) option)) (let ((option (gnc:lookup-option options                                  "Commodities"                                  "Report's currency")))   ((lambda (o) (if o (gnc:option-set-value o "USD"))) option)) (let ((option (gnc:lookup-option options                                  "Display"                                  "Parent account balances")))   ((lambda (o) (if o (gnc:option-set-value o 'recursive-bal))) option)) (let ((option (gnc:lookup-option options                                  "Display"                                  "Parent account subtotals")))   ((lambda (o) (if o (gnc:option-set-value o 't))) option)) (let ((option (gnc:lookup-option options                                  "General"                                  "Stylesheet")))   ((lambda (o) (if o (gnc:option-set-value o 'Easy))) option))   (gnc:restore-report-by-guid-with-custom-template 6 "8758ba23984c40dea5527f5f0ca2779e" "Profit & Loss" "" options) )
 
 [Page 13]
 PageType=GncPluginPageReport
+PageName=Account Summary
+SchemeOptions=(let ((options (gnc:report-template-new-options/report-guid "3298541c236b494998b236dfad6ad752" "Account Summary"))) (let ((option (gnc:lookup-option options                                  "Accounts"                                  "Accounts")))   ((lambda (o) (if o (gnc:option-set-value o '("10000000000000000000000000000009" "10000000000000000000000000000008" "10000000000000000000000000000007" "1000000000000000000000000000000b" "1000000000000000000000000000000c" "1000000000000000000000000000000a" "10000000000000000000000000000015" "10000000000000000000000000000016" "10000000000000000000000000000014" "1000000000000000000000000000001b" "1000000000000000000000000000001c" "1000000000000000000000000000001a" "10000000000000000000000000000018" "10000000000000000000000000000019" "10000000000000000000000000000017" "10000000000000000000000000000012" "10000000000000000000000000000011" "10000000000000000000000000000013" "10000000000000000000000000000010" "1000000000000000000000000000000e" "1000000000000000000000000000000f" "1000000000000000000000000000000d" "10000000000000000000000000000028" "10000000000000000000000000000025" "10000000000000000000000000000027" "10000000000000000000000000000023" "1000000000000000000000000000002b" "10000000000000000000000000000020" "1000000000000000000000000000001e" "10000000000000000000000000000022" "10000000000000000000000000000029" "10000000000000000000000000000026" "1000000000000000000000000000002a" "10000000000000000000000000000021" "10000000000000000000000000000024" "1000000000000000000000000000001f" "1000000000000000000000000000001d" "10000000000000000000000000000004" "1000000000000000000000000000002d" "1000000000000000000000000000002c" "10000000000000000000000000000005" "1000000000000000000000000000002e" "10000000000000000000000000000006" "10000000000000000000000000000002" "10000000000000000000000000000003" "10000000000000000000000000000001")))) option)) (let ((option (gnc:lookup-option options                                  "Commodities"                                  "Report's currency")))   ((lambda (o) (if o (gnc:option-set-value o "USD"))) option)) (let ((option (gnc:lookup-option options                                  "Display"                                  "Parent account balances")))   ((lambda (o) (if o (gnc:option-set-value o 'recursive-bal))) option)) (let ((option (gnc:lookup-option options                                  "Display"                                  "Parent account subtotals")))   ((lambda (o) (if o (gnc:option-set-value o 't))) option)) (let ((option (gnc:lookup-option options                                  "Display"                                  "Show accounting-style rules")))   ((lambda (o) (if o (gnc:option-set-value o #t))) option)) (let ((option (gnc:lookup-option options                                  "Display"                                  "Account Code")))   ((lambda (o) (if o (gnc:option-set-value o #f))) option)) (let ((option (gnc:lookup-option options                                  "General"                                  "Stylesheet")))   ((lambda (o) (if o (gnc:option-set-value o 'Easy))) option))   (gnc:restore-report-by-guid-with-custom-template 7 "3298541c236b494998b236dfad6ad752" "Account Summary" "" options) )
+
+[Page 14]
+PageType=GncPluginPageReport
 PageName=Advanced Portfolio
 SchemeOptions=(let ((options (gnc:report-template-new-options/report-guid "21d7cfc59fc74f22887596ebde7e462d" "Advanced Portfolio"))) (let ((option (gnc:lookup-option options                                  "General"                                  "Stylesheet")))   ((lambda (o) (if o (gnc:option-set-value o 'Easy))) option)) (let ((option (gnc:lookup-option options                                  "General"                                  "Report's currency")))   ((lambda (o) (if o (gnc:option-set-value o "USD"))) option))   (gnc:restore-report-by-guid-with-custom-template 8 "21d7cfc59fc74f22887596ebde7e462d" "Advanced Portfolio" "" options) )
+
+[Page 15]
+PageType=GncPluginPageReport
+PageName=Transaction Report
+SchemeOptions=(let ((options (gnc:report-template-new-options/report-guid "2fe3b9833af044abb929a88d5a59620f" "Transaction Report"))) (let ((option (gnc:lookup-option options                                  "Accounts"                                  "Accounts")))   ((lambda (o) (if o (gnc:option-set-value o '("10000000000000000000000000000008" "10000000000000000000000000000002" "10000000000000000000000000000003")))) option)) (let ((option (gnc:lookup-option options                                  "Display"                                  "Subtotal Table")))   ((lambda (o) (if o (gnc:option-set-value o #t))) option)) (let ((option (gnc:lookup-option options                                  "Display"                                  "Account Balance")))   ((lambda (o) (if o (gnc:option-set-value o #t))) option)) (let ((option (gnc:lookup-option options                                  "General"                                  "Stylesheet")))   ((lambda (o) (if o (gnc:option-set-value o 'Easy))) option)) (let ((option (gnc:lookup-option options                                  "General"                                  "Table for Exporting")))   ((lambda (o) (if o (gnc:option-set-value o #t))) option))   (gnc:restore-report-by-guid-with-custom-template 22 "2fe3b9833af044abb929a88d5a59620f" "Transaction Report" "" options) )

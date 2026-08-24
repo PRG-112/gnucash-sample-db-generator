@@ -41,7 +41,7 @@ A sample database has been included (2023++). The GCM file provides already pre-
 
 - copy the GCM file to "GNC_DATA_HOME\books" directory (run GnuCash and click: HELP -> ABOUT -> GNC_CONFIG_HOME to see where it's at) then open the sample database with the same name as the file.
 - !!! set the proper period (a must); run GnuCash then go to: EDIT -> PREFERENCES -> Accounting Period and set it accordingly to available data (between 2023-JAN and 2026-DEC). I'd advise to start with 2025-JAN-1 <-> 2025-DEC-31). Some reports have already preconfigured date to look better out of the box.
-
+- to combine these reports with your own generated database (different currency) - open the GCM file and barch-replace all "USD" into chosen (default_currency) - "EUR" for instance
 
  ##
  --- SCREENSHOTS:
